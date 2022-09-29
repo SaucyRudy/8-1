@@ -5,8 +5,8 @@ html {
 body {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 100%;
-	width: 96%;                       /* changed from 990 pixels */
-	max-width: 1200px;                /* maximum width of page */
+	width: 96%;                         /* changed from 990 pixels */
+	max-width: 1200px;                  /* maximum width of page */
 	background-color: white;
 	margin: 15px auto;
 	padding: 15px 0;
@@ -40,27 +40,27 @@ a:hover, a:focus {
 
 /* the styles for the header */
 header {
-	width: 100%;                         /* full width of body */
+	width: 100%;                        /* full width of body */
 	padding-bottom: 2em;
 }
 header h2 {
 	font-size: 2.25em;
 	color: #f2972e;
 	text-shadow: 2px 3px 0 black;
-	margin-left: 12.12121%;              /* 120 / 990 */
+	margin-left: 12.12121%;             /* 120 / 990 */
 	margin-bottom: .25em;
 }
 header h3 {
 	font-size: 1.25em;
 	font-style: italic;
-	margin-left: 12.12121%;              /* 120 / 990 */
+	margin-left: 12.12121%;             /* 120 / 990 */
 }
 header img {
-	width: 8.0808%;                      /* 80 / 990 */
-	max-width: 80px;                     /* native size */
+	width: 8.0808%;                     /* 80 / 990 */
+	max-width: 80px;                    /* native size */
 	min-width: 40px;
 	float: left;
-	margin-left: 2.0202%;                /* 20 / 990 */
+	margin-left: 2.0202%;               /* 20 / 990 */
 }
 /* the styles for the navigation menu - operation */
 #nav_menu ul {
@@ -124,21 +124,22 @@ header img {
 
 /* the styles for the section */
 section {
-	width: 54.0404%;                  /* 535 / 990 */
-	float: right;
-	margin-left: 2.0202%;             /* 20 / 990 */
-	padding: 1.5em 2.52525% 0 0;      /* 25 / 990 */
+	width: 54.0404%;                         /* 535 / 990 */
+	float: left;
+	margin-left: 2.0202%;                    /* 20 / 990 */
+	padding: 1.5em 2.52525% 0 0;             /* 25 / 990 */
+
 }
 section ul {
 	margin-top: 0;
 	margin-bottom: 1.5em;
 }
 section li {
-	font-size: .875em;                /* 14 / 16 */
+	font-size: .875em;
 	padding-bottom: .35em;
 }
 section h1 {
-	font-size: 1.75em;
+	font-size: 1.625em;
 	margin-bottom: .35em;
 }
 section h2 {
@@ -148,35 +149,148 @@ section h2 {
 a.date_passed {
 	color: gray;
 }
+
 /* the styles for the sidebar */
 aside {
-	width: 35.35353%;                /* 350 / 990 */
-	float: right;
-	padding: 2.0202%;                /* 20 / 990 */
+	width: 35.35353%;                        /* 350 / 990 */
+	float: left;
+	padding: 2.0202%;                        /* 20 / 990 */
 	background-color: #ffebc6;
-	margin: 1.5em 2.0202% 0 0;       /* 20 / 990 */
+	margin: 1.5em 2.0202% 0 0;               /* 20 / 990 */
 }
 aside h2 {
 	font-size: 1.25em;
 	padding-bottom: .5em;
 }
 aside h3 {
-	font-size: 1em;                  /* base font size */
+	font-size: 1em;                          /* base font size */
 	color: #931420;
 	padding-bottom: .5em;
 }
 aside p {
 	margin-bottom: .5em;
 }
+aside ul {
+	margin-top: 0;
+	margin-bottom: 1.5em;
+}
+aside li {
+	font-size: .875em;
+	padding-bottom: .35em;
+}
 /* the styles for the footer */
 footer {
 	clear: both;
-	width: 100%;                    /* full width of body */
+	width: 100%;                             /* full width of body */
 	border-top: 2px solid #f2972e;
 	padding-top: .7em;
 }
 footer p {
 	font-size: .75em;
 	text-align: right;
-	margin-right: 2.0202%;          /* 20 / 990 */
+	margin-right: 2.0202%;                   /* 20 / 990 */
+}
+/* hide the mobile menu initially */
+#mobile_menu {
+	display: none;
+}
+/* media queries */
+
+/* decrease font sizes to keep content from rolling */
+@media only screen and (max-width: 886px) {
+    section h1 {
+	    font-size: 1.5em;
+    }
+	#nav_menu ul li a {
+		font-size: .875em;
+	}
+}
+
+/* decrease font sizes to keep content from rolling */
+@media only screen and (max-width: 837px) {
+	section h2, aside h2 {
+		font-size: 1.125em;
+	}
+	aside h3 {
+	    font-size: .9375em;
+    }
+}
+/* remove floating from section, aside, and header image and display mobile menu */
+@media only screen and (max-width: 771px) {
+    #nav_menu {
+        display: none;
+    }
+    #mobile_menu {
+        display: block;
+    }
+    .slicknav_menu {
+        background-color: #facd8a !important;	
+    }
+    body {
+        width: 100%;                           /* full width of screen */
+        margin: 0;                             /* no margins */
+        border: none;                          /* no border */
+    }
+    header, footer p {
+        text-align: center;
+    }
+
+	header img {
+        float: none;
+		margin-left: 0;
+    }
+    header h2 {
+        font-size: 1.625em;
+        margin: .4em 0 .25em 0;
+    }
+    header h3 {
+        font-size: 1em;                        /* base font size */
+        margin-left: 0;
+    }
+    footer p {
+		margin-right: 0;
+	}
+    section {
+        width: 95.9596%;                       /* 100 - (2 * 2.0202) for padding */
+        float: none;
+        margin-right: 2.0202%;                 /* 20 / 990 */
+        padding-right: 0;
+    }
+	section h1 {
+		font-size: 1.25em;
+	}
+    aside {
+        width: 91.9192%;                       /* 100 - (4 * 2.0202) for padding and margins */
+        float: none;
+        margin: 0 2.0202% 2.0202% 2.0202%;     /* 20 / 990 */
+    }
+}
+
+/* decrease font sizes */
+@media only screen and (max-width: 480px) {
+	header h2 {
+		font-size: 1.375em;
+	}
+	header h3 {
+		font-size: .875em;
+	}
+}
+
+/* decrease font sizes to prevent rolling */
+@media only screen and (max-width: 410px) {
+    header h2, section h1, aside h2 {
+        font-size: 1.125em;
+    }
+    header h3 {
+        font-size: .75em;
+    }
+	section h2 {
+        font-size: 1em;                        /* base font size */
+    }
+    aside h3 {
+        font-size: .9375em;
+    }
+    footer p {
+        font-size: .6875em;
+    }
 }
